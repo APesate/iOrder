@@ -460,6 +460,7 @@
 				8285DB3E1895DA1E0039CFFC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8285DB3F1895DA1E0039CFFC /* Build configuration list for PBXNativeTarget "iOrderTests" */ = {
 			isa = XCConfigurationList;
@@ -468,6 +469,7 @@
 				8285DB411895DA1E0039CFFC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

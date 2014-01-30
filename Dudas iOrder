@@ -1,0 +1,13 @@
+Dudas iOrder
+
+- Componentes iBeacon.
+- Donde se almacena la informacion (iPhone / Beacon / Servidor).
+- Como hacer llegar la informacion desde la aplicacion al servidor.
+- Como hacer llegar la informacion desde el beacon al iPhone.
+- Como hacer llegar la informacion desde el servidor al beacon.
+- Como limitar la region.
+- Como detectar la ubicacion de la persona.
+- Como hacer un push notification.
+- Como juntar mesas
+- Como controlar que dispositivos se conectan
+	- Seguridad. Como evitar que alguien ordene por ti
