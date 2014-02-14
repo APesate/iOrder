@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		820E2FC018A9B40B00DD8DDE /* MenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 820E2FBF18A9B40B00DD8DDE /* MenuCell.m */; };
+		820E2FC218A9B41900DD8DDE /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 820E2FC118A9B41900DD8DDE /* MenuCell.xib */; };
+		820E2FC718ADD13B00DD8DDE /* Ham1.png in Resources */ = {isa = PBXBuildFile; fileRef = 820E2FC418ADD13B00DD8DDE /* Ham1.png */; };
+		820E2FC818ADD13B00DD8DDE /* ham2.png in Resources */ = {isa = PBXBuildFile; fileRef = 820E2FC518ADD13B00DD8DDE /* ham2.png */; };
+		820E2FC918ADD13B00DD8DDE /* ham3.png in Resources */ = {isa = PBXBuildFile; fileRef = 820E2FC618ADD13B00DD8DDE /* ham3.png */; };
+		820E2FCD18ADD17300DD8DDE /* ham4.png in Resources */ = {isa = PBXBuildFile; fileRef = 820E2FCA18ADD17300DD8DDE /* ham4.png */; };
+		820E2FCE18ADD17300DD8DDE /* ham5.png in Resources */ = {isa = PBXBuildFile; fileRef = 820E2FCB18ADD17300DD8DDE /* ham5.png */; };
+		820E2FCF18ADD17300DD8DDE /* ham6.png in Resources */ = {isa = PBXBuildFile; fileRef = 820E2FCC18ADD17300DD8DDE /* ham6.png */; };
 		8285DB0E1895DA1E0039CFFC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8285DB0D1895DA1E0039CFFC /* Foundation.framework */; };
 		8285DB101895DA1E0039CFFC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8285DB0F1895DA1E0039CFFC /* CoreGraphics.framework */; };
 		8285DB121895DA1E0039CFFC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8285DB111895DA1E0039CFFC /* UIKit.framework */; };
@@ -34,6 +42,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		820E2FBE18A9B40B00DD8DDE /* MenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuCell.h; sourceTree = "<group>"; };
+		820E2FBF18A9B40B00DD8DDE /* MenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuCell.m; sourceTree = "<group>"; };
+		820E2FC118A9B41900DD8DDE /* MenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
+		820E2FC418ADD13B00DD8DDE /* Ham1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Ham1.png; path = ../../../../../Desktop/Ham1.png; sourceTree = "<group>"; };
+		820E2FC518ADD13B00DD8DDE /* ham2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ham2.png; path = ../../../../../Desktop/ham2.png; sourceTree = "<group>"; };
+		820E2FC618ADD13B00DD8DDE /* ham3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ham3.png; path = ../../../../../Desktop/ham3.png; sourceTree = "<group>"; };
+		820E2FCA18ADD17300DD8DDE /* ham4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ham4.png; path = ../../../../../Desktop/ham4.png; sourceTree = "<group>"; };
+		820E2FCB18ADD17300DD8DDE /* ham5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ham5.png; path = ../../../../../Desktop/ham5.png; sourceTree = "<group>"; };
+		820E2FCC18ADD17300DD8DDE /* ham6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ham6.png; path = ../../../../../Desktop/ham6.png; sourceTree = "<group>"; };
 		8285DB0A1895DA1E0039CFFC /* iOrder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOrder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8285DB0D1895DA1E0039CFFC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8285DB0F1895DA1E0039CFFC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -79,6 +96,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		820E2FC318ADD10F00DD8DDE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				820E2FC418ADD13B00DD8DDE /* Ham1.png */,
+				820E2FCA18ADD17300DD8DDE /* ham4.png */,
+				820E2FCB18ADD17300DD8DDE /* ham5.png */,
+				820E2FCC18ADD17300DD8DDE /* ham6.png */,
+				820E2FC518ADD13B00DD8DDE /* ham2.png */,
+				820E2FC618ADD13B00DD8DDE /* ham3.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		8285DB011895DA1E0039CFFC = {
 			isa = PBXGroup;
 			children = (
@@ -117,7 +147,11 @@
 				8285DB1F1895DA1E0039CFFC /* Main.storyboard */,
 				8285DB221895DA1E0039CFFC /* ViewController.h */,
 				8285DB231895DA1E0039CFFC /* ViewController.m */,
+				820E2FBE18A9B40B00DD8DDE /* MenuCell.h */,
+				820E2FBF18A9B40B00DD8DDE /* MenuCell.m */,
+				820E2FC118A9B41900DD8DDE /* MenuCell.xib */,
 				8285DB251895DA1E0039CFFC /* Images.xcassets */,
+				820E2FC318ADD10F00DD8DDE /* Resources */,
 				8285DB141895DA1E0039CFFC /* Supporting Files */,
 			);
 			path = iOrder;
@@ -229,8 +263,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				8285DB261895DA1E0039CFFC /* Images.xcassets in Resources */,
+				820E2FCF18ADD17300DD8DDE /* ham6.png in Resources */,
+				820E2FC218A9B41900DD8DDE /* MenuCell.xib in Resources */,
+				820E2FCE18ADD17300DD8DDE /* ham5.png in Resources */,
+				820E2FC718ADD13B00DD8DDE /* Ham1.png in Resources */,
 				8285DB181895DA1E0039CFFC /* InfoPlist.strings in Resources */,
 				8285DB211895DA1E0039CFFC /* Main.storyboard in Resources */,
+				820E2FCD18ADD17300DD8DDE /* ham4.png in Resources */,
+				820E2FC918ADD13B00DD8DDE /* ham3.png in Resources */,
+				820E2FC818ADD13B00DD8DDE /* ham2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,6 +292,7 @@
 			files = (
 				8285DB241895DA1E0039CFFC /* ViewController.m in Sources */,
 				8285DB1E1895DA1E0039CFFC /* AppDelegate.m in Sources */,
+				820E2FC018A9B40B00DD8DDE /* MenuCell.m in Sources */,
 				8285DB1A1895DA1E0039CFFC /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
