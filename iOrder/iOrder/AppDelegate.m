@@ -2,17 +2,33 @@
 //  AppDelegate.m
 //  iOrder
 //
-//  Created by Andrés Pesate on 1/26/14.
+//  Created by Andrés Pesate on 2/21/14.
 //  Copyright (c) 2014 Andrés Pesate. All rights reserved.
 //
 
 #import "AppDelegate.h"
 
 @implementation AppDelegate
+@synthesize managedObjectContext = _managedObjectContext, managedObjectModel = _managedObjectModel, persistentStoreCoordinator = _persistentStoreCoordinator;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    NSURL* documentsDirectory = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+    NSURL* modelURL = [[NSBundle mainBundle] URLForResource:@"Model" withExtension:@"momd"];
+    NSURL* sqliteURL = [documentsDirectory URLByAppendingPathComponent:@"Model.sqlite"];
+    NSError* error;
+    
+    _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
+    _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:_managedObjectModel];
+    
+    if([_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:sqliteURL options:nil error:&error]){
+        _managedObjectContext = [[NSManagedObjectContext alloc] init];
+        
+        [_managedObjectContext setPersistentStoreCoordinator:_persistentStoreCoordinator];
+    }
+
+    
     return YES;
 }
 							
