@@ -29,5 +29,11 @@
 - (IBAction)addComent:(UIButton *)sender {
 }
 
+- (IBAction)decrementQuantity:(UIButton *)sender {
+    
+}
 
+- (IBAction)incrementQuantity:(id)sender {
+
+}
 @end

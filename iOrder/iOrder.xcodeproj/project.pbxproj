@@ -25,11 +25,12 @@
 		824D065318B7F4F000E6179C /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 824D065118B7F4F000E6179C /* Model.xcdatamodeld */; };
 		824D065918B7F7F000E6179C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 824D065818B7F7F000E6179C /* CoreData.framework */; };
 		824D065C18B7FAC900E6179C /* APTModelFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 824D065B18B7FAC900E6179C /* APTModelFactory.m */; };
+		828CE50518B9A76F0038FF03 /* Producto.m in Sources */ = {isa = PBXBuildFile; fileRef = 828CE50418B9A76F0038FF03 /* Producto.m */; };
+		828CE50B18B9A7AF0038FF03 /* FacturaHasProducto.m in Sources */ = {isa = PBXBuildFile; fileRef = 828CE50A18B9A7AF0038FF03 /* FacturaHasProducto.m */; };
+		828CE51118B9A8F80038FF03 /* Factura.m in Sources */ = {isa = PBXBuildFile; fileRef = 828CE51018B9A8F80038FF03 /* Factura.m */; };
 		82D832B418B819F20053CAF1 /* Categoria.m in Sources */ = {isa = PBXBuildFile; fileRef = 82D832B318B819F20053CAF1 /* Categoria.m */; };
 		82D832BE18B8496C0053CAF1 /* PedidoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82D832BD18B8496C0053CAF1 /* PedidoViewController.m */; };
 		82D832C118B8512A0053CAF1 /* PedidoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 82D832C018B8512A0053CAF1 /* PedidoCell.m */; };
-		82D832CF18B86F6B0053CAF1 /* Factura.m in Sources */ = {isa = PBXBuildFile; fileRef = 82D832CE18B86F6B0053CAF1 /* Factura.m */; };
-		82D832D218B86F6C0053CAF1 /* Producto.m in Sources */ = {isa = PBXBuildFile; fileRef = 82D832D118B86F6C0053CAF1 /* Producto.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,12 @@
 		824D065818B7F7F000E6179C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		824D065A18B7FAC900E6179C /* APTModelFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APTModelFactory.h; sourceTree = "<group>"; };
 		824D065B18B7FAC900E6179C /* APTModelFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APTModelFactory.m; sourceTree = "<group>"; };
+		828CE50318B9A76F0038FF03 /* Producto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Producto.h; sourceTree = "<group>"; };
+		828CE50418B9A76F0038FF03 /* Producto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Producto.m; sourceTree = "<group>"; };
+		828CE50918B9A7AF0038FF03 /* FacturaHasProducto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacturaHasProducto.h; sourceTree = "<group>"; };
+		828CE50A18B9A7AF0038FF03 /* FacturaHasProducto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacturaHasProducto.m; sourceTree = "<group>"; };
+		828CE50F18B9A8F80038FF03 /* Factura.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Factura.h; sourceTree = "<group>"; };
+		828CE51018B9A8F80038FF03 /* Factura.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Factura.m; sourceTree = "<group>"; };
 		82D832B218B819F20053CAF1 /* Categoria.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Categoria.h; sourceTree = "<group>"; };
 		82D832B318B819F20053CAF1 /* Categoria.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Categoria.m; sourceTree = "<group>"; };
 		82D832B518B823630053CAF1 /* ModelHeaders.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModelHeaders.h; sourceTree = "<group>"; };
@@ -75,10 +82,6 @@
 		82D832BD18B8496C0053CAF1 /* PedidoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PedidoViewController.m; sourceTree = "<group>"; };
 		82D832BF18B8512A0053CAF1 /* PedidoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PedidoCell.h; sourceTree = "<group>"; };
 		82D832C018B8512A0053CAF1 /* PedidoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PedidoCell.m; sourceTree = "<group>"; };
-		82D832CD18B86F6B0053CAF1 /* Factura.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Factura.h; sourceTree = "<group>"; };
-		82D832CE18B86F6B0053CAF1 /* Factura.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Factura.m; sourceTree = "<group>"; };
-		82D832D018B86F6C0053CAF1 /* Producto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Producto.h; sourceTree = "<group>"; };
-		82D832D118B86F6C0053CAF1 /* Producto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Producto.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,11 +205,13 @@
 				82D832B518B823630053CAF1 /* ModelHeaders.h */,
 				82D832B218B819F20053CAF1 /* Categoria.h */,
 				82D832B318B819F20053CAF1 /* Categoria.m */,
-				82D832CD18B86F6B0053CAF1 /* Factura.h */,
-				82D832CE18B86F6B0053CAF1 /* Factura.m */,
-				82D832D018B86F6C0053CAF1 /* Producto.h */,
-				82D832D118B86F6C0053CAF1 /* Producto.m */,
+				828CE50318B9A76F0038FF03 /* Producto.h */,
+				828CE50418B9A76F0038FF03 /* Producto.m */,
 				824D065118B7F4F000E6179C /* Model.xcdatamodeld */,
+				828CE50F18B9A8F80038FF03 /* Factura.h */,
+				828CE51018B9A8F80038FF03 /* Factura.m */,
+				828CE50918B9A7AF0038FF03 /* FacturaHasProducto.h */,
+				828CE50A18B9A7AF0038FF03 /* FacturaHasProducto.m */,
 				824D065A18B7FAC900E6179C /* APTModelFactory.h */,
 				824D065B18B7FAC900E6179C /* APTModelFactory.m */,
 			);
@@ -317,16 +322,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				82D832D218B86F6C0053CAF1 /* Producto.m in Sources */,
 				824D062F18B7ED0800E6179C /* MenuViewController.m in Sources */,
+				828CE50518B9A76F0038FF03 /* Producto.m in Sources */,
 				824D065C18B7FAC900E6179C /* APTModelFactory.m in Sources */,
 				824D062918B7ED0800E6179C /* AppDelegate.m in Sources */,
 				824D065318B7F4F000E6179C /* Model.xcdatamodeld in Sources */,
+				828CE50B18B9A7AF0038FF03 /* FacturaHasProducto.m in Sources */,
 				82D832C118B8512A0053CAF1 /* PedidoCell.m in Sources */,
 				82D832BE18B8496C0053CAF1 /* PedidoViewController.m in Sources */,
 				82D832B418B819F20053CAF1 /* Categoria.m in Sources */,
 				824D064F18B7F0FA00E6179C /* MenuCell.m in Sources */,
-				82D832CF18B86F6B0053CAF1 /* Factura.m in Sources */,
+				828CE51118B9A8F80038FF03 /* Factura.m in Sources */,
 				824D062518B7ED0800E6179C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

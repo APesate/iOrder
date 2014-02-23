@@ -46,7 +46,7 @@
     NSSortDescriptor* sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"fecha_creacion" ascending:NO];
     Factura* factura = (Factura*)[modelFactory fetchRecentObjectInEntity:@"Factura" withSort:sortDescriptor];
     
-    ordenActual = [NSMutableArray arrayWithArray:[[factura productos] allObjects]];
+    ordenActual = [NSMutableArray arrayWithArray:[[factura factura] allObjects]];
     
 
     switch (factura.estado.integerValue) {
@@ -70,8 +70,8 @@
             break;
     }
     int total = 0;
-    for (Producto* producto in ordenActual) {
-        total += producto.precio.integerValue;
+    for (FacturaHasProducto* producto in ordenActual) {
+        total += producto.productos.precio.integerValue;
     }
     
     totalOrden.text = [NSString stringWithFormat:@"Bs. %i", total];
@@ -123,9 +123,12 @@
         cell = [[PedidoCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellID];
     }
     
-    cell.title.text = [(Producto* )ordenActual[indexPath.row] nombre];
-    cell.image.image = [UIImage imageWithData:[(Producto*) ordenActual[indexPath.row] image]];
-    cell.precio.text = [NSString stringWithFormat:@"Bs. %li", (long)[[(Producto*) ordenActual[indexPath.row] precio] integerValue]];
+    FacturaHasProducto* producto = ordenActual[indexPath.row];
+    
+    cell.title.text = [[producto productos] nombre];
+    cell.image.image = [UIImage imageWithData:[[producto productos] image]];
+    cell.precio.text = [NSString stringWithFormat:@"Bs. %li", (long)[[[producto productos] precio] integerValue]];
+    cell.cantidad.text = [NSString stringWithFormat:@"%li", (long)[[producto cantidad] integerValue]];
     
     return cell;
 }

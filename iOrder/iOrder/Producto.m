@@ -8,7 +8,6 @@
 
 #import "Producto.h"
 #import "Categoria.h"
-#import "Factura.h"
 
 
 @implementation Producto
@@ -16,10 +15,10 @@
 @dynamic descripcion;
 @dynamic fecha_actualizacion;
 @dynamic fecha_creacion;
+@dynamic image;
 @dynamic nombre;
 @dynamic precio;
-@dynamic image;
 @dynamic belongsCategoria;
-@dynamic belongsToFacturas;
+@dynamic factura;
 
 @end

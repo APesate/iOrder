@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class Producto;
+@class FacturaHasProducto;
 
 typedef enum {
     SinOrdenar = 0,
@@ -21,16 +21,16 @@ typedef enum {
 
 @interface Factura : NSManagedObject
 
-@property (nonatomic, retain) NSDate * fecha_creacion;
 @property (nonatomic, retain) NSNumber * estado;
-@property (nonatomic, retain) NSSet *productos;
+@property (nonatomic, retain) NSDate * fecha_creacion;
+@property (nonatomic, retain) NSSet *factura;
 @end
 
 @interface Factura (CoreDataGeneratedAccessors)
 
-- (void)addProductosObject:(Producto *)value;
-- (void)removeProductosObject:(Producto *)value;
-- (void)addProductos:(NSSet *)values;
-- (void)removeProductos:(NSSet *)values;
+- (void)addFacturaObject:(FacturaHasProducto *)value;
+- (void)removeFacturaObject:(FacturaHasProducto *)value;
+- (void)addFactura:(NSSet *)values;
+- (void)removeFactura:(NSSet *)values;
 
 @end

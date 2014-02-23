@@ -7,7 +7,12 @@
     <entity name="Factura" representedClassName="Factura" syncable="YES">
         <attribute name="estado" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="fecha_creacion" optional="YES" attributeType="Date" syncable="YES"/>
-        <relationship name="productos" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Producto" inverseName="belongsToFacturas" inverseEntity="Producto" syncable="YES"/>
+        <relationship name="factura" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FacturaHasProducto" inverseName="factura" inverseEntity="FacturaHasProducto" syncable="YES"/>
+    </entity>
+    <entity name="FacturaHasProducto" representedClassName="FacturaHasProducto" syncable="YES">
+        <attribute name="cantidad" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="factura" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Factura" inverseName="factura" inverseEntity="Factura" syncable="YES"/>
+        <relationship name="productos" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Producto" inverseName="factura" inverseEntity="Producto" syncable="YES"/>
     </entity>
     <entity name="Producto" representedClassName="Producto" syncable="YES">
         <attribute name="descripcion" attributeType="String" syncable="YES"/>
@@ -17,11 +22,12 @@
         <attribute name="nombre" attributeType="String" syncable="YES"/>
         <attribute name="precio" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <relationship name="belongsCategoria" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Categoria" inverseName="hasProductos" inverseEntity="Categoria" syncable="YES"/>
-        <relationship name="belongsToFacturas" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Factura" inverseName="productos" inverseEntity="Factura" syncable="YES"/>
+        <relationship name="factura" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FacturaHasProducto" inverseName="productos" inverseEntity="FacturaHasProducto" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Producto" positionX="0" positionY="0" width="0" height="0"/>
         <element name="Categoria" positionX="0" positionY="0" width="0" height="0"/>
         <element name="Factura" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Producto" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="FacturaHasProducto" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>

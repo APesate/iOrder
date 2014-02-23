@@ -9,25 +9,25 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class Categoria, Factura;
+@class Categoria;
 
 @interface Producto : NSManagedObject
 
 @property (nonatomic, retain) NSString * descripcion;
 @property (nonatomic, retain) NSDate * fecha_actualizacion;
 @property (nonatomic, retain) NSDate * fecha_creacion;
+@property (nonatomic, retain) NSData * image;
 @property (nonatomic, retain) NSString * nombre;
 @property (nonatomic, retain) NSNumber * precio;
-@property (nonatomic, retain) NSData * image;
 @property (nonatomic, retain) Categoria *belongsCategoria;
-@property (nonatomic, retain) NSSet *belongsToFacturas;
+@property (nonatomic, retain) NSSet *factura;
 @end
 
 @interface Producto (CoreDataGeneratedAccessors)
 
-- (void)addBelongsToFacturasObject:(Factura *)value;
-- (void)removeBelongsToFacturasObject:(Factura *)value;
-- (void)addBelongsToFacturas:(NSSet *)values;
-- (void)removeBelongsToFacturas:(NSSet *)values;
+- (void)addFacturaObject:(NSManagedObject *)value;
+- (void)removeFacturaObject:(NSManagedObject *)value;
+- (void)addFactura:(NSSet *)values;
+- (void)removeFactura:(NSSet *)values;
 
 @end

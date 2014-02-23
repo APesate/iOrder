@@ -10,3 +10,4 @@
 #import "Producto.h"
 #import "Categoria.h"
 #import "Factura.h"
+#import "FacturaHasProducto.h"

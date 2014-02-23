@@ -58,11 +58,11 @@
     
     if (factura) {
         if (factura.estado.integerValue == SinOrdenar) {
-            [factura addProductosObject:_producto];
             
-            NSError* error;
-            if (![[modelFactory managedObjectContext] save:&error]){
-                NSLog(@"Error [%s, %d]: %@", __PRETTY_FUNCTION__, __LINE__, error);
+            if (![self facturaContainsProduct:factura]) {
+                [self addProductToFactura:factura];
+            } else {
+                [self incrementProductQuantityForFactura:factura];
             }
         } else {
             [self crearNuevaFactura];
@@ -72,17 +72,51 @@
     }
 }
 
+- (BOOL)facturaContainsProduct:(Factura*)factura{
+    __block BOOL duplicate = NO;
+    
+    [[factura factura] enumerateObjectsUsingBlock:^(FacturaHasProducto* obj, BOOL *stop) {
+                if ([[obj productos] isEqual:_producto]) {
+                    duplicate = YES;
+                    *stop = YES;
+                }
+    }];
+    
+    return duplicate;
+}
+
+- (void)incrementProductQuantityForFactura:(Factura*)factura{
+    [[factura factura] enumerateObjectsUsingBlock:^(FacturaHasProducto* obj, BOOL *stop) {
+        if ([[obj productos] isEqual:_producto]) {
+            [obj setCantidad:@([[obj cantidad] integerValue] + 1)];
+            *stop = YES;
+        }
+    }];
+}
+
+- (void)addProductToFactura:(Factura*)factura{
+    FacturaHasProducto* newProduct = [[FacturaHasProducto alloc] initWithEntity:[NSEntityDescription entityForName:@"FacturaHasProducto" inManagedObjectContext:[modelFactory managedObjectContext]] insertIntoManagedObjectContext:[modelFactory managedObjectContext]];
+    
+    [newProduct setCantidad:@(1)];
+    [newProduct setFactura:factura];
+    [newProduct setProductos:_producto];
+    
+    [factura addFacturaObject:newProduct];
+    
+    NSError* error;
+    if (![[modelFactory managedObjectContext] save:&error]){
+        NSLog(@"Error [%s, %d]: %@", __PRETTY_FUNCTION__, __LINE__, [error localizedDescription]);
+    }
+
+}
+
 - (void)crearNuevaFactura {
     Factura* factura = [[Factura alloc] initWithEntity:[NSEntityDescription entityForName:@"Factura" inManagedObjectContext:[modelFactory managedObjectContext]] insertIntoManagedObjectContext:[modelFactory managedObjectContext]];
     
     [factura setFecha_creacion:[NSDate date]];
     [factura setEstado:@(SinOrdenar)];
-    [factura addProductosObject:_producto];
-    
-    NSError* error;
-    if (![[modelFactory managedObjectContext] save:&error]){
-        NSLog(@"Error [%s, %d]: %@", __PRETTY_FUNCTION__, __LINE__, error);
-    }
+   
+    [self addProductToFactura:factura];
 }
 
 @end
