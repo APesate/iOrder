@@ -28,6 +28,12 @@
 		828CE50518B9A76F0038FF03 /* Producto.m in Sources */ = {isa = PBXBuildFile; fileRef = 828CE50418B9A76F0038FF03 /* Producto.m */; };
 		828CE50B18B9A7AF0038FF03 /* FacturaHasProducto.m in Sources */ = {isa = PBXBuildFile; fileRef = 828CE50A18B9A7AF0038FF03 /* FacturaHasProducto.m */; };
 		828CE51118B9A8F80038FF03 /* Factura.m in Sources */ = {isa = PBXBuildFile; fileRef = 828CE51018B9A8F80038FF03 /* Factura.m */; };
+		82C7408818BBFB9A00D9F45A /* hamburguesa1.png in Resources */ = {isa = PBXBuildFile; fileRef = 82C7408218BBFB9A00D9F45A /* hamburguesa1.png */; };
+		82C7408918BBFB9A00D9F45A /* hamburguesa2.png in Resources */ = {isa = PBXBuildFile; fileRef = 82C7408318BBFB9A00D9F45A /* hamburguesa2.png */; };
+		82C7408A18BBFB9A00D9F45A /* hamburguesa3.png in Resources */ = {isa = PBXBuildFile; fileRef = 82C7408418BBFB9A00D9F45A /* hamburguesa3.png */; };
+		82C7408B18BBFB9A00D9F45A /* hamburguesa4.png in Resources */ = {isa = PBXBuildFile; fileRef = 82C7408518BBFB9A00D9F45A /* hamburguesa4.png */; };
+		82C7408C18BBFB9A00D9F45A /* hamburguesa5.png in Resources */ = {isa = PBXBuildFile; fileRef = 82C7408618BBFB9A00D9F45A /* hamburguesa5.png */; };
+		82C7408D18BBFB9A00D9F45A /* hamburguesa6.png in Resources */ = {isa = PBXBuildFile; fileRef = 82C7408718BBFB9A00D9F45A /* hamburguesa6.png */; };
 		82D832B418B819F20053CAF1 /* Categoria.m in Sources */ = {isa = PBXBuildFile; fileRef = 82D832B318B819F20053CAF1 /* Categoria.m */; };
 		82D832BE18B8496C0053CAF1 /* PedidoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82D832BD18B8496C0053CAF1 /* PedidoViewController.m */; };
 		82D832C118B8512A0053CAF1 /* PedidoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 82D832C018B8512A0053CAF1 /* PedidoCell.m */; };
@@ -75,6 +81,12 @@
 		828CE50A18B9A7AF0038FF03 /* FacturaHasProducto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacturaHasProducto.m; sourceTree = "<group>"; };
 		828CE50F18B9A8F80038FF03 /* Factura.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Factura.h; sourceTree = "<group>"; };
 		828CE51018B9A8F80038FF03 /* Factura.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Factura.m; sourceTree = "<group>"; };
+		82C7408218BBFB9A00D9F45A /* hamburguesa1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hamburguesa1.png; sourceTree = "<group>"; };
+		82C7408318BBFB9A00D9F45A /* hamburguesa2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hamburguesa2.png; sourceTree = "<group>"; };
+		82C7408418BBFB9A00D9F45A /* hamburguesa3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hamburguesa3.png; sourceTree = "<group>"; };
+		82C7408518BBFB9A00D9F45A /* hamburguesa4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hamburguesa4.png; sourceTree = "<group>"; };
+		82C7408618BBFB9A00D9F45A /* hamburguesa5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hamburguesa5.png; sourceTree = "<group>"; };
+		82C7408718BBFB9A00D9F45A /* hamburguesa6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hamburguesa6.png; sourceTree = "<group>"; };
 		82D832B218B819F20053CAF1 /* Categoria.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Categoria.h; sourceTree = "<group>"; };
 		82D832B318B819F20053CAF1 /* Categoria.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Categoria.m; sourceTree = "<group>"; };
 		82D832B518B823630053CAF1 /* ModelHeaders.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModelHeaders.h; sourceTree = "<group>"; };
@@ -162,6 +174,7 @@
 		824D061F18B7ED0800E6179C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				82C7408118BBFB9A00D9F45A /* Resource */,
 				824D062018B7ED0800E6179C /* iOrder-Info.plist */,
 				824D062118B7ED0800E6179C /* InfoPlist.strings */,
 				824D062418B7ED0800E6179C /* main.m */,
@@ -216,6 +229,19 @@
 				824D065B18B7FAC900E6179C /* APTModelFactory.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		82C7408118BBFB9A00D9F45A /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				82C7408218BBFB9A00D9F45A /* hamburguesa1.png */,
+				82C7408318BBFB9A00D9F45A /* hamburguesa2.png */,
+				82C7408418BBFB9A00D9F45A /* hamburguesa3.png */,
+				82C7408518BBFB9A00D9F45A /* hamburguesa4.png */,
+				82C7408618BBFB9A00D9F45A /* hamburguesa5.png */,
+				82C7408718BBFB9A00D9F45A /* hamburguesa6.png */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 		82D832C318B852C80053CAF1 /* Protocols */ = {
@@ -301,8 +327,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82C7408918BBFB9A00D9F45A /* hamburguesa2.png in Resources */,
+				82C7408818BBFB9A00D9F45A /* hamburguesa1.png in Resources */,
 				824D063118B7ED0800E6179C /* Images.xcassets in Resources */,
+				82C7408B18BBFB9A00D9F45A /* hamburguesa4.png in Resources */,
+				82C7408D18BBFB9A00D9F45A /* hamburguesa6.png in Resources */,
+				82C7408C18BBFB9A00D9F45A /* hamburguesa5.png in Resources */,
 				824D062318B7ED0800E6179C /* InfoPlist.strings in Resources */,
+				82C7408A18BBFB9A00D9F45A /* hamburguesa3.png in Resources */,
 				824D062C18B7ED0800E6179C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

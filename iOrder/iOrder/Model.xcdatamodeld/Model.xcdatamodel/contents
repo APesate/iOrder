@@ -7,7 +7,9 @@
     <entity name="Factura" representedClassName="Factura" syncable="YES">
         <attribute name="estado" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="fecha_creacion" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="numero_control" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <relationship name="factura" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FacturaHasProducto" inverseName="factura" inverseEntity="FacturaHasProducto" syncable="YES"/>
+        <relationship name="usuario" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Usuario" inverseName="factura" inverseEntity="Usuario" syncable="YES"/>
     </entity>
     <entity name="FacturaHasProducto" representedClassName="FacturaHasProducto" syncable="YES">
         <attribute name="cantidad" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
@@ -24,10 +26,21 @@
         <relationship name="belongsCategoria" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Categoria" inverseName="hasProductos" inverseEntity="Categoria" syncable="YES"/>
         <relationship name="factura" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FacturaHasProducto" inverseName="productos" inverseEntity="FacturaHasProducto" syncable="YES"/>
     </entity>
+    <entity name="Usuario" syncable="YES">
+        <attribute name="apellido" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cedula" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="correo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fecha_actualizacion" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="fecha_creacion" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="fecha_nacimiento" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="nombre" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="factura" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Factura" inverseName="usuario" inverseEntity="Factura" syncable="YES"/>
+    </entity>
     <elements>
         <element name="Categoria" positionX="0" positionY="0" width="0" height="0"/>
         <element name="Factura" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="Producto" positionX="0" positionY="0" width="0" height="0"/>
         <element name="FacturaHasProducto" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Producto" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Usuario" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>

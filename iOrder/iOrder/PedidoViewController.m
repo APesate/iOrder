@@ -71,7 +71,7 @@
     }
     int total = 0;
     for (FacturaHasProducto* producto in ordenActual) {
-        total += producto.productos.precio.integerValue;
+        total += (producto.productos.precio.integerValue * producto.cantidad.integerValue);
     }
     
     totalOrden.text = [NSString stringWithFormat:@"Bs. %i", total];

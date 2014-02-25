@@ -15,6 +15,7 @@
     APTModelFactory* modelFactory;
     NSArray* categories;
     
+    NSIndexPath* selectedCell;
     __weak IBOutlet UITableView* menuTableView;
 }
 
@@ -75,6 +76,7 @@
             producto.fecha_creacion = [NSDate date];
             producto.fecha_actualizacion = [NSDate date];
             producto.belongsCategoria = categorie;
+            producto.image =  UIImagePNGRepresentation([UIImage imageNamed:[NSString stringWithFormat:@"hamburguesa%i.png", (arc4random()%6 + 1)]]);
             
             [categorie addHasProductosObject:producto];
         }
@@ -84,6 +86,21 @@
         }
         
     }
+}
+
+#pragma mark - UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    if ([selectedCell isEqual:indexPath]) {
+        selectedCell = nil;
+    }else{
+        selectedCell = indexPath;
+    }
+    
+    [tableView beginUpdates];
+    [tableView endUpdates];
 }
 
 #pragma mark UITableViewDataSource
@@ -118,6 +135,10 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 80;
+    if ([indexPath isEqual:selectedCell]) {
+        return 200;
+    }else{
+        return 80;
+    }
 }
 @end

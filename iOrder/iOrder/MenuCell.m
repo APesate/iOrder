@@ -19,6 +19,7 @@
     if (self) {
         // Initialization code
         modelFactory = [APTModelFactory sharedInstance];
+        _isSelected = NO;
     }
     return self;
 }
@@ -37,8 +38,43 @@
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     [super setSelected:selected animated:animated];
-
+    
     // Configure the view for the selected state
+    if (_isSelected) {
+        CGSize size = [self resizeLabel];
+        [UIView animateWithDuration:0.5f animations:^{
+            [_description setFrame:CGRectMake(_description.frame.origin.x,
+                                             _description.frame.origin.y,
+                                             _description.frame.size.width,
+                                              size.height)];
+        }];
+    } else {
+        [UIView animateWithDuration:0.5f animations:^{
+            [_description setFrame:CGRectMake(_description.frame.origin.x,
+                                              _description.frame.origin.y,
+                                              _description.frame.size.width,
+                                              41)];
+        }];
+    }
+    
+    _isSelected = !_isSelected;
+}
+
+- (CGSize)resizeLabel
+{
+    NSDictionary *attributesDictionary = [NSDictionary dictionaryWithObjectsAndKeys:
+                                          [UIFont fontWithName:@"Helvetica Neue" size:12], NSFontAttributeName,
+                                          nil];
+    
+    CGRect frame = [_description.text boundingRectWithSize:CGSizeMake(_description.frame.size.width, 2000.0)
+                                            options:NSStringDrawingUsesLineFragmentOrigin
+                                         attributes:attributesDictionary
+                                            context:nil];
+    
+    CGSize size = frame.size;
+    NSLog(@"%.2f, %.2f", size.width, size.height);
+    
+    return size;
 }
 
 - (void)setProducto:(Producto *)producto{
@@ -47,7 +83,7 @@
         _title.text = [producto nombre];
         _description.text = [producto descripcion];
         _price.text = [NSString stringWithFormat:@"Bs. %@", [producto precio]];
-        //_image.image = [UIImage imageWithData:[producto image]];
+        _image.image = [UIImage imageWithData:[producto image]];
     }
 }
 
