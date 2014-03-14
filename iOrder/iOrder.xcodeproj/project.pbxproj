@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8212362D18D2A3400038543C /* MenuHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8212362C18D2A3400038543C /* MenuHeader.xib */; };
+		8212363018D2A3600038543C /* MenuHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 8212362F18D2A3600038543C /* MenuHeader.m */; };
 		824D061918B7ED0800E6179C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 824D061818B7ED0800E6179C /* Foundation.framework */; };
 		824D061B18B7ED0800E6179C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 824D061A18B7ED0800E6179C /* CoreGraphics.framework */; };
 		824D061D18B7ED0800E6179C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 824D061C18B7ED0800E6179C /* UIKit.framework */; };
@@ -28,6 +30,8 @@
 		828CE50518B9A76F0038FF03 /* Producto.m in Sources */ = {isa = PBXBuildFile; fileRef = 828CE50418B9A76F0038FF03 /* Producto.m */; };
 		828CE50B18B9A7AF0038FF03 /* FacturaHasProducto.m in Sources */ = {isa = PBXBuildFile; fileRef = 828CE50A18B9A7AF0038FF03 /* FacturaHasProducto.m */; };
 		828CE51118B9A8F80038FF03 /* Factura.m in Sources */ = {isa = PBXBuildFile; fileRef = 828CE51018B9A8F80038FF03 /* Factura.m */; };
+		82941E6718CD04AF0046B973 /* Placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 82941E6518CD04AF0046B973 /* Placeholder.png */; };
+		82941E6818CD04AF0046B973 /* Placeholder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82941E6618CD04AF0046B973 /* Placeholder@2x.png */; };
 		82C7408818BBFB9A00D9F45A /* hamburguesa1.png in Resources */ = {isa = PBXBuildFile; fileRef = 82C7408218BBFB9A00D9F45A /* hamburguesa1.png */; };
 		82C7408918BBFB9A00D9F45A /* hamburguesa2.png in Resources */ = {isa = PBXBuildFile; fileRef = 82C7408318BBFB9A00D9F45A /* hamburguesa2.png */; };
 		82C7408A18BBFB9A00D9F45A /* hamburguesa3.png in Resources */ = {isa = PBXBuildFile; fileRef = 82C7408418BBFB9A00D9F45A /* hamburguesa3.png */; };
@@ -50,6 +54,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8212362C18D2A3400038543C /* MenuHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuHeader.xib; sourceTree = "<group>"; };
+		8212362E18D2A3600038543C /* MenuHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuHeader.h; sourceTree = "<group>"; };
+		8212362F18D2A3600038543C /* MenuHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuHeader.m; sourceTree = "<group>"; };
 		824D061518B7ED0800E6179C /* iOrder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOrder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		824D061818B7ED0800E6179C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		824D061A18B7ED0800E6179C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -81,6 +88,8 @@
 		828CE50A18B9A7AF0038FF03 /* FacturaHasProducto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacturaHasProducto.m; sourceTree = "<group>"; };
 		828CE50F18B9A8F80038FF03 /* Factura.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Factura.h; sourceTree = "<group>"; };
 		828CE51018B9A8F80038FF03 /* Factura.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Factura.m; sourceTree = "<group>"; };
+		82941E6518CD04AF0046B973 /* Placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Placeholder.png; sourceTree = "<group>"; };
+		82941E6618CD04AF0046B973 /* Placeholder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Placeholder@2x.png"; sourceTree = "<group>"; };
 		82C7408218BBFB9A00D9F45A /* hamburguesa1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hamburguesa1.png; sourceTree = "<group>"; };
 		82C7408318BBFB9A00D9F45A /* hamburguesa2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hamburguesa2.png; sourceTree = "<group>"; };
 		82C7408418BBFB9A00D9F45A /* hamburguesa3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hamburguesa3.png; sourceTree = "<group>"; };
@@ -208,6 +217,9 @@
 				824D064E18B7F0FA00E6179C /* MenuCell.m */,
 				82D832BF18B8512A0053CAF1 /* PedidoCell.h */,
 				82D832C018B8512A0053CAF1 /* PedidoCell.m */,
+				8212362E18D2A3600038543C /* MenuHeader.h */,
+				8212362F18D2A3600038543C /* MenuHeader.m */,
+				8212362C18D2A3400038543C /* MenuHeader.xib */,
 			);
 			name = "Custom Cells";
 			sourceTree = "<group>";
@@ -234,6 +246,8 @@
 		82C7408118BBFB9A00D9F45A /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				82941E6518CD04AF0046B973 /* Placeholder.png */,
+				82941E6618CD04AF0046B973 /* Placeholder@2x.png */,
 				82C7408218BBFB9A00D9F45A /* hamburguesa1.png */,
 				82C7408318BBFB9A00D9F45A /* hamburguesa2.png */,
 				82C7408418BBFB9A00D9F45A /* hamburguesa3.png */,
@@ -327,13 +341,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82941E6818CD04AF0046B973 /* Placeholder@2x.png in Resources */,
 				82C7408918BBFB9A00D9F45A /* hamburguesa2.png in Resources */,
 				82C7408818BBFB9A00D9F45A /* hamburguesa1.png in Resources */,
 				824D063118B7ED0800E6179C /* Images.xcassets in Resources */,
 				82C7408B18BBFB9A00D9F45A /* hamburguesa4.png in Resources */,
 				82C7408D18BBFB9A00D9F45A /* hamburguesa6.png in Resources */,
+				82941E6718CD04AF0046B973 /* Placeholder.png in Resources */,
 				82C7408C18BBFB9A00D9F45A /* hamburguesa5.png in Resources */,
 				824D062318B7ED0800E6179C /* InfoPlist.strings in Resources */,
+				8212362D18D2A3400038543C /* MenuHeader.xib in Resources */,
 				82C7408A18BBFB9A00D9F45A /* hamburguesa3.png in Resources */,
 				824D062C18B7ED0800E6179C /* Main.storyboard in Resources */,
 			);
@@ -365,6 +382,7 @@
 				82D832B418B819F20053CAF1 /* Categoria.m in Sources */,
 				824D064F18B7F0FA00E6179C /* MenuCell.m in Sources */,
 				828CE51118B9A8F80038FF03 /* Factura.m in Sources */,
+				8212363018D2A3600038543C /* MenuHeader.m in Sources */,
 				824D062518B7ED0800E6179C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

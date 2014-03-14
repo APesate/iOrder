@@ -82,7 +82,7 @@
         _producto = producto;
         _title.text = [producto nombre];
         _description.text = [producto descripcion];
-        _price.text = [NSString stringWithFormat:@"Bs. %@", [producto precio]];
+        _price.text = [NSString stringWithFormat:@"Bs.%@", [producto precio]];
         _image.image = [UIImage imageWithData:[producto image]];
     }
 }

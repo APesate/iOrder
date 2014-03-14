@@ -27,7 +27,6 @@
         
         [_managedObjectContext setPersistentStoreCoordinator:_persistentStoreCoordinator];
     }
-
     
     return YES;
 }

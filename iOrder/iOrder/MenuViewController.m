@@ -16,6 +16,7 @@
     NSArray* categories;
     
     NSIndexPath* selectedCell;
+    NSInteger sectionSelected;
     __weak IBOutlet UITableView* menuTableView;
 }
 
@@ -26,6 +27,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
 	// Do any additional setup after loading the view, typically from a nib.
     modelFactory = [APTModelFactory sharedInstance];
     
@@ -39,6 +41,7 @@
     //[self fillCategories];
     
     [menuTableView reloadData];
+    [menuTableView.layer setCornerRadius:10];
 }
 
 - (void)didReceiveMemoryWarning
@@ -103,11 +106,37 @@
     [tableView endUpdates];
 }
 
+- (void)showSection:(NSInteger)section {
+    
+    if (sectionSelected == -1 || sectionSelected != section) {
+        sectionSelected = section;
+    } else {
+        sectionSelected = -1;
+    }
+    
+    [menuTableView reloadData];
+}
+
 #pragma mark UITableViewDataSource
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    MenuHeader* header = [[MenuHeader alloc] initWithFrame:CGRectMake(0, 0, 320, 50)];
+    
+    [header.image setImage:[UIImage imageNamed:@"Placeholder.png"]];
+    [header.title setText:[(Categoria*)categories[section] nombre]];
+    [header setSection:section];
+    [header setDelegate:self];
+    
+    return header;
+}
 
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     //Return the numbers of rows in each Section of the Table View
-    return [[[(Categoria*)categories[section] hasProductos] allObjects] count];
+    if (sectionSelected == section) {
+        return [[[(Categoria*)categories[section] hasProductos] allObjects] count];
+    }
+    
+    return 0;
 }
 
 -(NSInteger) numberOfSectionsInTableView:(UITableView *)tableView{
@@ -119,7 +148,7 @@
     
     static NSString* cellID = @"MenuCell";
     
-    MenuCell * cell = [tableView dequeueReusableCellWithIdentifier:cellID];
+    MenuCell* cell = [tableView dequeueReusableCellWithIdentifier:cellID];
     
     if (cell == nil) {
         //cell = [[MenuCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellID];
@@ -130,15 +159,15 @@
     return cell;
 }
 
-- (NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
-    return [(Categoria*)categories[section] nombre];
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 50;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if ([indexPath isEqual:selectedCell]) {
         return 200;
     }else{
-        return 80;
+        return 100;
     }
 }
 @end
