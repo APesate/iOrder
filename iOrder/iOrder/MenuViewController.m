@@ -30,6 +30,7 @@
 
 	// Do any additional setup after loading the view, typically from a nib.
     modelFactory = [APTModelFactory sharedInstance];
+    sectionSelected = -1;
     
     //[self initBDD];
     
@@ -113,7 +114,8 @@
     } else {
         sectionSelected = -1;
     }
-    
+
+//    [menuTableView reloadSections:[NSIndexSet indexSetWithIndex:sectionSelected] withRowAnimation:UITableViewRowAnimationFade];
     [menuTableView reloadData];
 }
 
