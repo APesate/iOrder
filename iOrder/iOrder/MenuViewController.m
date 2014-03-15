@@ -109,14 +109,31 @@
 
 - (void)showSection:(NSInteger)section {
     
-    if (sectionSelected == -1 || sectionSelected != section) {
-        sectionSelected = section;
-    } else {
+    if (sectionSelected == section) {
         sectionSelected = -1;
+        [menuTableView reloadSections:[NSIndexSet indexSetWithIndex:section] withRowAnimation:UITableViewRowAnimationFade];
+    } else if (sectionSelected != -1){
+        [CATransaction begin];
+        NSInteger aux = sectionSelected;
+    
+        sectionSelected = -1;
+        [menuTableView reloadSections:[NSIndexSet indexSetWithIndex:aux] withRowAnimation:UITableViewRowAnimationFade];
+        
+        [CATransaction setCompletionBlock:^{
+            sectionSelected = section;
+            [menuTableView reloadSections:[NSIndexSet indexSetWithIndex:section] withRowAnimation:UITableViewRowAnimationFade];
+            [menuTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:section] atScrollPosition:UITableViewScrollPositionTop animated:YES];
+        }];
+        
+        [CATransaction commit];
+    } else {
+        sectionSelected = section;
+        [menuTableView reloadSections:[NSIndexSet indexSetWithIndex:section] withRowAnimation:UITableViewRowAnimationFade];
     }
-
-//    [menuTableView reloadSections:[NSIndexSet indexSetWithIndex:sectionSelected] withRowAnimation:UITableViewRowAnimationFade];
-    [menuTableView reloadData];
+    
+    
+    
+    
 }
 
 #pragma mark UITableViewDataSource
