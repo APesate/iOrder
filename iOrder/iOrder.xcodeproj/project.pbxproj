@@ -27,20 +27,21 @@
 		824D065318B7F4F000E6179C /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 824D065118B7F4F000E6179C /* Model.xcdatamodeld */; };
 		824D065918B7F7F000E6179C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 824D065818B7F7F000E6179C /* CoreData.framework */; };
 		824D065C18B7FAC900E6179C /* APTModelFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 824D065B18B7FAC900E6179C /* APTModelFactory.m */; };
-		828CE50518B9A76F0038FF03 /* Producto.m in Sources */ = {isa = PBXBuildFile; fileRef = 828CE50418B9A76F0038FF03 /* Producto.m */; };
 		828CE50B18B9A7AF0038FF03 /* FacturaHasProducto.m in Sources */ = {isa = PBXBuildFile; fileRef = 828CE50A18B9A7AF0038FF03 /* FacturaHasProducto.m */; };
 		828CE51118B9A8F80038FF03 /* Factura.m in Sources */ = {isa = PBXBuildFile; fileRef = 828CE51018B9A8F80038FF03 /* Factura.m */; };
 		82941E6718CD04AF0046B973 /* Placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 82941E6518CD04AF0046B973 /* Placeholder.png */; };
 		82941E6818CD04AF0046B973 /* Placeholder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82941E6618CD04AF0046B973 /* Placeholder@2x.png */; };
+		82AE162318D68C5000558767 /* WebServicesObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AE162218D68C5000558767 /* WebServicesObject.m */; };
 		82C7408818BBFB9A00D9F45A /* hamburguesa1.png in Resources */ = {isa = PBXBuildFile; fileRef = 82C7408218BBFB9A00D9F45A /* hamburguesa1.png */; };
 		82C7408918BBFB9A00D9F45A /* hamburguesa2.png in Resources */ = {isa = PBXBuildFile; fileRef = 82C7408318BBFB9A00D9F45A /* hamburguesa2.png */; };
 		82C7408A18BBFB9A00D9F45A /* hamburguesa3.png in Resources */ = {isa = PBXBuildFile; fileRef = 82C7408418BBFB9A00D9F45A /* hamburguesa3.png */; };
 		82C7408B18BBFB9A00D9F45A /* hamburguesa4.png in Resources */ = {isa = PBXBuildFile; fileRef = 82C7408518BBFB9A00D9F45A /* hamburguesa4.png */; };
 		82C7408C18BBFB9A00D9F45A /* hamburguesa5.png in Resources */ = {isa = PBXBuildFile; fileRef = 82C7408618BBFB9A00D9F45A /* hamburguesa5.png */; };
 		82C7408D18BBFB9A00D9F45A /* hamburguesa6.png in Resources */ = {isa = PBXBuildFile; fileRef = 82C7408718BBFB9A00D9F45A /* hamburguesa6.png */; };
-		82D832B418B819F20053CAF1 /* Categoria.m in Sources */ = {isa = PBXBuildFile; fileRef = 82D832B318B819F20053CAF1 /* Categoria.m */; };
 		82D832BE18B8496C0053CAF1 /* PedidoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82D832BD18B8496C0053CAF1 /* PedidoViewController.m */; };
 		82D832C118B8512A0053CAF1 /* PedidoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 82D832C018B8512A0053CAF1 /* PedidoCell.m */; };
+		82F5E23418D8A7660042C805 /* Categoria.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F5E23318D8A7660042C805 /* Categoria.m */; };
+		82F5E23718D8AD3F0042C805 /* Producto.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F5E23618D8AD3F0042C805 /* Producto.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,27 +83,30 @@
 		824D065818B7F7F000E6179C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		824D065A18B7FAC900E6179C /* APTModelFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APTModelFactory.h; sourceTree = "<group>"; };
 		824D065B18B7FAC900E6179C /* APTModelFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APTModelFactory.m; sourceTree = "<group>"; };
-		828CE50318B9A76F0038FF03 /* Producto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Producto.h; sourceTree = "<group>"; };
-		828CE50418B9A76F0038FF03 /* Producto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Producto.m; sourceTree = "<group>"; };
 		828CE50918B9A7AF0038FF03 /* FacturaHasProducto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacturaHasProducto.h; sourceTree = "<group>"; };
 		828CE50A18B9A7AF0038FF03 /* FacturaHasProducto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacturaHasProducto.m; sourceTree = "<group>"; };
 		828CE50F18B9A8F80038FF03 /* Factura.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Factura.h; sourceTree = "<group>"; };
 		828CE51018B9A8F80038FF03 /* Factura.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Factura.m; sourceTree = "<group>"; };
 		82941E6518CD04AF0046B973 /* Placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Placeholder.png; sourceTree = "<group>"; };
 		82941E6618CD04AF0046B973 /* Placeholder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Placeholder@2x.png"; sourceTree = "<group>"; };
+		82AE161F18D689AE00558767 /* WebServices.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebServices.h; sourceTree = "<group>"; };
+		82AE162118D68C5000558767 /* WebServicesObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebServicesObject.h; sourceTree = "<group>"; };
+		82AE162218D68C5000558767 /* WebServicesObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebServicesObject.m; sourceTree = "<group>"; };
 		82C7408218BBFB9A00D9F45A /* hamburguesa1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hamburguesa1.png; sourceTree = "<group>"; };
 		82C7408318BBFB9A00D9F45A /* hamburguesa2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hamburguesa2.png; sourceTree = "<group>"; };
 		82C7408418BBFB9A00D9F45A /* hamburguesa3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hamburguesa3.png; sourceTree = "<group>"; };
 		82C7408518BBFB9A00D9F45A /* hamburguesa4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hamburguesa4.png; sourceTree = "<group>"; };
 		82C7408618BBFB9A00D9F45A /* hamburguesa5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hamburguesa5.png; sourceTree = "<group>"; };
 		82C7408718BBFB9A00D9F45A /* hamburguesa6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hamburguesa6.png; sourceTree = "<group>"; };
-		82D832B218B819F20053CAF1 /* Categoria.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Categoria.h; sourceTree = "<group>"; };
-		82D832B318B819F20053CAF1 /* Categoria.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Categoria.m; sourceTree = "<group>"; };
 		82D832B518B823630053CAF1 /* ModelHeaders.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModelHeaders.h; sourceTree = "<group>"; };
 		82D832BC18B8496C0053CAF1 /* PedidoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PedidoViewController.h; sourceTree = "<group>"; };
 		82D832BD18B8496C0053CAF1 /* PedidoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PedidoViewController.m; sourceTree = "<group>"; };
 		82D832BF18B8512A0053CAF1 /* PedidoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PedidoCell.h; sourceTree = "<group>"; };
 		82D832C018B8512A0053CAF1 /* PedidoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PedidoCell.m; sourceTree = "<group>"; };
+		82F5E23218D8A7660042C805 /* Categoria.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Categoria.h; sourceTree = "<group>"; };
+		82F5E23318D8A7660042C805 /* Categoria.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Categoria.m; sourceTree = "<group>"; };
+		82F5E23518D8AD3F0042C805 /* Producto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Producto.h; sourceTree = "<group>"; };
+		82F5E23618D8AD3F0042C805 /* Producto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Producto.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +178,7 @@
 				824D065018B7F10300E6179C /* Custom Cells */,
 				824D065418B7F6A200E6179C /* Model */,
 				82D832C318B852C80053CAF1 /* Protocols */,
+				82AE162018D68C1800558767 /* API */,
 				824D063018B7ED0800E6179C /* Images.xcassets */,
 				824D061F18B7ED0800E6179C /* Supporting Files */,
 			);
@@ -228,11 +233,11 @@
 			isa = PBXGroup;
 			children = (
 				82D832B518B823630053CAF1 /* ModelHeaders.h */,
-				82D832B218B819F20053CAF1 /* Categoria.h */,
-				82D832B318B819F20053CAF1 /* Categoria.m */,
-				828CE50318B9A76F0038FF03 /* Producto.h */,
-				828CE50418B9A76F0038FF03 /* Producto.m */,
+				82F5E23218D8A7660042C805 /* Categoria.h */,
+				82F5E23318D8A7660042C805 /* Categoria.m */,
 				824D065118B7F4F000E6179C /* Model.xcdatamodeld */,
+				82F5E23518D8AD3F0042C805 /* Producto.h */,
+				82F5E23618D8AD3F0042C805 /* Producto.m */,
 				828CE50F18B9A8F80038FF03 /* Factura.h */,
 				828CE51018B9A8F80038FF03 /* Factura.m */,
 				828CE50918B9A7AF0038FF03 /* FacturaHasProducto.h */,
@@ -241,6 +246,16 @@
 				824D065B18B7FAC900E6179C /* APTModelFactory.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		82AE162018D68C1800558767 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				82AE161F18D689AE00558767 /* WebServices.h */,
+				82AE162118D68C5000558767 /* WebServicesObject.h */,
+				82AE162218D68C5000558767 /* WebServicesObject.m */,
+			);
+			name = API;
 			sourceTree = "<group>";
 		};
 		82C7408118BBFB9A00D9F45A /* Resource */ = {
@@ -309,9 +324,12 @@
 		824D060D18B7ED0800E6179C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Andrés Pesate";
 				TargetAttributes = {
+					824D061418B7ED0800E6179C = {
+						DevelopmentTeam = PBJAETU4UU;
+					};
 					824D063518B7ED0800E6179C = {
 						TestTargetID = 824D061418B7ED0800E6179C;
 					};
@@ -372,16 +390,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				824D062F18B7ED0800E6179C /* MenuViewController.m in Sources */,
-				828CE50518B9A76F0038FF03 /* Producto.m in Sources */,
+				82F5E23718D8AD3F0042C805 /* Producto.m in Sources */,
 				824D065C18B7FAC900E6179C /* APTModelFactory.m in Sources */,
 				824D062918B7ED0800E6179C /* AppDelegate.m in Sources */,
 				824D065318B7F4F000E6179C /* Model.xcdatamodeld in Sources */,
+				82F5E23418D8A7660042C805 /* Categoria.m in Sources */,
 				828CE50B18B9A7AF0038FF03 /* FacturaHasProducto.m in Sources */,
 				82D832C118B8512A0053CAF1 /* PedidoCell.m in Sources */,
 				82D832BE18B8496C0053CAF1 /* PedidoViewController.m in Sources */,
-				82D832B418B819F20053CAF1 /* Categoria.m in Sources */,
 				824D064F18B7F0FA00E6179C /* MenuCell.m in Sources */,
 				828CE51118B9A8F80038FF03 /* Factura.m in Sources */,
+				82AE162318D68C5000558767 /* WebServicesObject.m in Sources */,
 				8212363018D2A3600038543C /* MenuHeader.m in Sources */,
 				824D062518B7ED0800E6179C /* main.m in Sources */,
 			);
@@ -437,7 +456,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -476,7 +494,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -510,10 +527,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iOrder/iOrder-Prefix.pch";
 				INFOPLIST_FILE = "iOrder/iOrder-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -523,10 +543,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iOrder/iOrder-Prefix.pch";
 				INFOPLIST_FILE = "iOrder/iOrder-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -534,7 +557,6 @@
 		824D064B18B7ED0900E6179C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/iOrder.app/iOrder";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -557,7 +579,6 @@
 		824D064C18B7ED0900E6179C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/iOrder.app/iOrder";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",

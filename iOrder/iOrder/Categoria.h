@@ -2,7 +2,7 @@
 //  Categoria.h
 //  iOrder
 //
-//  Created by Andrés Pesate on 2/21/14.
+//  Created by Andrés Pesate on 3/18/14.
 //  Copyright (c) 2014 Andrés Pesate. All rights reserved.
 //
 
@@ -14,6 +14,7 @@
 @interface Categoria : NSManagedObject
 
 @property (nonatomic, retain) NSString * nombre;
+@property (nonatomic, retain) NSNumber * ident;
 @property (nonatomic, retain) NSSet *hasProductos;
 @end
 

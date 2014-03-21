@@ -2,7 +2,7 @@
 //  Categoria.m
 //  iOrder
 //
-//  Created by Andrés Pesate on 2/21/14.
+//  Created by Andrés Pesate on 3/18/14.
 //  Copyright (c) 2014 Andrés Pesate. All rights reserved.
 //
 
@@ -13,6 +13,7 @@
 @implementation Categoria
 
 @dynamic nombre;
+@dynamic ident;
 @dynamic hasProductos;
 
 @end

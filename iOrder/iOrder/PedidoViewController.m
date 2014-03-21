@@ -9,6 +9,7 @@
 #import "PedidoViewController.h"
 #import "PedidoCell.h"
 #import "ModelHeaders.h"
+#import "WebServicesObject.h"
 
 @interface PedidoViewController (){
     
@@ -19,6 +20,8 @@
     
     NSMutableArray* ordenActual;
     APTModelFactory* modelFactory;
+    WebServicesObject* webServicesObject;
+    
 }
 - (IBAction)realizarOrden:(id)sender;
 
@@ -40,6 +43,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     modelFactory = [APTModelFactory sharedInstance];
+    webServicesObject = [WebServicesObject sharedInstance];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -93,6 +97,7 @@
     if (factura.estado.integerValue != Lista) {
         factura.estado = @(Lista);
         statusLabel.text = @"Lista";
+        [webServicesObject addNewOrderForUser:1];
         
         NSError* error;
         if (![[modelFactory managedObjectContext] save:&error]) {

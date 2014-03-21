@@ -2,14 +2,14 @@
 //  Producto.h
 //  iOrder
 //
-//  Created by Andrés Pesate on 2/22/14.
+//  Created by Andrés Pesate on 3/18/14.
 //  Copyright (c) 2014 Andrés Pesate. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class Categoria;
+@class Categoria, FacturaHasProducto;
 
 @interface Producto : NSManagedObject
 
@@ -25,8 +25,8 @@
 
 @interface Producto (CoreDataGeneratedAccessors)
 
-- (void)addFacturaObject:(NSManagedObject *)value;
-- (void)removeFacturaObject:(NSManagedObject *)value;
+- (void)addFacturaObject:(FacturaHasProducto *)value;
+- (void)removeFacturaObject:(FacturaHasProducto *)value;
 - (void)addFactura:(NSSet *)values;
 - (void)removeFactura:(NSSet *)values;
 

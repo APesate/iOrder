@@ -13,6 +13,7 @@
 
 @interface MenuViewController (){
     APTModelFactory* modelFactory;
+    WebServicesObject* sWebServicesObject;
     NSArray* categories;
     
     NSIndexPath* selectedCell;
@@ -28,43 +29,39 @@
 {
     [super viewDidLoad];
 
-	// Do any additional setup after loading the view, typically from a nib.
+    sWebServicesObject = [WebServicesObject sharedInstance];
     modelFactory = [APTModelFactory sharedInstance];
     sectionSelected = -1;
-    
-    //[self initBDD];
-    
-    NSSortDescriptor* sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"nombre"
-                                                                   ascending:YES];
-    categories = [NSArray arrayWithArray:[modelFactory fetchEntity:@"Categoria"
-                                                withSortDescriptor:sortDescriptor]];
-    
-    //[self fillCategories];
-    
-    [menuTableView reloadData];
     [menuTableView.layer setCornerRadius:10];
+    
+    
+    [[NSNotificationCenter defaultCenter] addObserverForName:@"ReloadData" object:nil queue:nil usingBlock:^(NSNotification *note) {
+        NSSortDescriptor* sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"nombre"
+                                                                       ascending:YES];
+        categories = [NSArray arrayWithArray:[modelFactory fetchEntity:@"Categoria"
+                                                    withSortDescriptor:sortDescriptor]];
+        [menuTableView reloadData];
+    }];
+    
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"isFirstTime"]) {
+        [sWebServicesObject getAllCategories];
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isFirstTime"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        NSLog(@"First");
+    } else {
+        NSSortDescriptor* sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"nombre"
+                                                                       ascending:YES];
+        categories = [NSArray arrayWithArray:[modelFactory fetchEntity:@"Categoria"
+                                                    withSortDescriptor:sortDescriptor]];
+        [menuTableView reloadData];
+        NSLog(@"Not First");
+    }
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (void)initBDD{
-    NSError* error;
-    
-    for (int i = 0; i < 5; i++) {
-        Categoria* categoria = [[Categoria alloc] initWithEntity:[NSEntityDescription entityForName:@"Categoria" inManagedObjectContext:[modelFactory managedObjectContext]] insertIntoManagedObjectContext:[modelFactory managedObjectContext]];
-        
-        categoria.nombre = [NSString stringWithFormat:@"Categoria %i", i];
-    }
-    
-    
-    if (![[modelFactory managedObjectContext] save:&error]) {
-        NSLog(@"Error [%s, %d]: %@", __PRETTY_FUNCTION__, __LINE__, error);
-    }
-    
 }
 
 - (void)fillCategories {
@@ -102,7 +99,7 @@
     }else{
         selectedCell = indexPath;
     }
-    
+
     [tableView beginUpdates];
     [tableView endUpdates];
 }
@@ -111,6 +108,7 @@
     
     if (sectionSelected == section) {
         sectionSelected = -1;
+        selectedCell = nil;
         [menuTableView reloadSections:[NSIndexSet indexSetWithIndex:section] withRowAnimation:UITableViewRowAnimationFade];
     } else if (sectionSelected != -1){
         [CATransaction begin];

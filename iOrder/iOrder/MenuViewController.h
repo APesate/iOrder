@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "MenuHeader.h"
+#import "WebServicesObject.h"
 
 @interface MenuViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, SectionDelegate>
 

@@ -121,4 +121,78 @@ static APTModelFactory* sModelFactory;
     return nil;
 }
 
+- (void)addCategories:(NSArray *)categories {
+        NSError* error;
+        for (NSDictionary* categorie in categories) {
+            Categoria* categoria = [[Categoria alloc] initWithEntity:[NSEntityDescription entityForName:@"Categoria" inManagedObjectContext:_managedObjectContext] insertIntoManagedObjectContext:_managedObjectContext];
+    
+            categoria.nombre = [categorie objectForKey:@"name"];
+            categoria.ident = @([[categorie objectForKey:@"id"] integerValue]);
+        }
+    
+    
+        if (![_managedObjectContext save:&error]) {
+            NSLog(@"Error [%s, %d]: %@", __PRETTY_FUNCTION__, __LINE__, error);
+        } else {
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"ReloadData" object:nil];
+        }
+}
+
+- (NSArray *)fetchEntity:(NSString*)entityName withPredicate:(NSPredicate *)predicate {
+    if ([fileManager fileExistsAtPath:[[documentsDirectory URLByAppendingPathComponent:@"Model.sqlite"] path]]) {
+        
+        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+        NSEntityDescription *entity = [NSEntityDescription entityForName:entityName
+                                                  inManagedObjectContext:_managedObjectContext];
+        [fetchRequest setEntity:entity];
+ 
+        [fetchRequest setPredicate:predicate];
+        
+        NSError *error = nil;
+        NSArray *fetchedObjects = [_managedObjectContext executeFetchRequest:fetchRequest error:&error];
+        if (fetchedObjects == nil) {
+            NSLog(@"Error [%s, %d]: %@", __PRETTY_FUNCTION__, __LINE__, error);
+        } else {
+            return fetchedObjects;
+        }
+        
+        
+    } else {
+        NSLog(@"Error [%s, %d]: No se encontro el archivo solicitado", __PRETTY_FUNCTION__, __LINE__);
+    }
+    
+    return 0;
+}
+
+- (void)addProducts:(NSArray *)products ForCategorie:(int)categorieId {
+    NSError* error;
+    
+    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+    NSPredicate* predicate = [NSPredicate predicateWithFormat:@"ident = %i", categorieId];
+    
+    Categoria* categorie = (Categoria *)[[self fetchEntity:@"Categoria" withPredicate:predicate] firstObject];
+    [df setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    
+    for (NSDictionary* obj in products) {
+        
+        Producto* product = [[Producto alloc] initWithEntity:[NSEntityDescription entityForName:@"Producto" inManagedObjectContext:_managedObjectContext] insertIntoManagedObjectContext:_managedObjectContext];
+        
+        product.nombre = [obj objectForKey:@"name"];
+        product.precio = @([[obj objectForKey:@"precio"] integerValue]);
+        product.descripcion = [obj objectForKey:@"description"];
+        //product.image = UIImagePNGRepresentation([UIImage imageWithData:[NSData dataWithData:[obj objectForKey:@"image"]]]);
+        product.fecha_actualizacion = [df dateFromString:[obj objectForKey:@"update_date"]];
+        product.fecha_creacion = [df dateFromString:[obj objectForKey:@"creation_date"]];
+        product.belongsCategoria = categorie;
+        
+        [categorie addHasProductosObject:product];
+    }
+    
+    if (![_managedObjectContext save:&error]) {
+        NSLog(@"Error [%s, %d]: %@", __PRETTY_FUNCTION__, __LINE__, [error localizedDescription]);
+    } else {
+        //[[NSNotificationCenter defaultCenter] postNotificationName:@"ReloadData" object:nil];
+    }
+}
+
 @end
