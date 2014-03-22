@@ -90,9 +90,10 @@ static WebServicesObject* sWebServices;
     }];
 }
 
-- (void)addNewOrderForUser:(int)userId {
-    NSURL* url = [NSURL URLWithString:[NSString stringWithFormat:kADD_NEW_ORDER_FOR_USER, userId]];
+- (void)addNewOrder {
+    NSURL* url = [NSURL URLWithString:[NSString stringWithFormat:kADD_NEW_ORDER_FOR_USER, [[NSUserDefaults standardUserDefaults] objectForKey:@"deviceToken"]]];
     NSURLRequest* request = [NSURLRequest requestWithURL:url];
+
     
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
         

@@ -18,6 +18,7 @@
 + (instancetype)sharedInstance;
 
 - (NSArray*)fetchEntity:(NSString*)entityName withSortDescriptor:(NSSortDescriptor*)sortDescriptor;
+- (NSArray *)fetchEntity:(NSString*)entityName withPredicate:(NSPredicate *)predicate;
 - (NSInteger)numberOfElementsForEntity:(NSString*)entityName withSortDescriptor:(NSSortDescriptor*)sortDescriptor;
 - (instancetype)fetchRecentObjectInEntity:(NSString*)entityName withSort:(NSSortDescriptor*)sortDescriptor;
 - (void)addCategories:(NSArray *)categories;

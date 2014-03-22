@@ -95,9 +95,9 @@
     Factura* factura = (Factura*)[modelFactory fetchRecentObjectInEntity:@"Factura" withSort:sortDescriptor];
     
     if (factura.estado.integerValue != Lista) {
-        factura.estado = @(Lista);
-        statusLabel.text = @"Lista";
-        [webServicesObject addNewOrderForUser:1];
+        factura.estado = @(Recibida);
+        statusLabel.text = @"Recibida";
+        [webServicesObject addNewOrder];
         
         NSError* error;
         if (![[modelFactory managedObjectContext] save:&error]) {

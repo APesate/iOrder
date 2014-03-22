@@ -33,6 +33,14 @@
 	[[UIApplication sharedApplication] registerForRemoteNotificationTypes:
      (UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
     
+    NSDictionary *tmpDic = [launchOptions objectForKey:@"UIApplicationLaunchOptionsRemoteNotificationKey"];
+    
+    //if tmpDic is not nil, then your app is launched due to an APNs push, therefore check this NSDictionary for further information
+    if (tmpDic != nil) {
+        NSLog(@" - launch options dict has something ");
+        NSLog(@"%@", tmpDic);
+    }
+    
     return YES;
 }
 							
@@ -65,7 +73,14 @@
 
 - (void)application:(UIApplication*)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData*)deviceToken
 {
-	NSLog(@"My token is: %@", deviceToken);
+    NSString* token = [NSString stringWithFormat:@"%@", deviceToken];
+    token = [token stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<>"]];
+    token = [token stringByReplacingOccurrencesOfString:@" " withString:@""];
+
+    if (token != [[NSUserDefaults standardUserDefaults] objectForKey:@"deviceToken"]) {
+       [[NSUserDefaults standardUserDefaults] setObject:token forKey:@"deviceToken"];
+    }
+    NSLog(@"My token is: %@", token);
 }
 
 - (void)application:(UIApplication*)application didFailToRegisterForRemoteNotificationsWithError:(NSError*)error

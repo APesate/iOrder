@@ -16,6 +16,6 @@
 
 - (void)getAllCategories;
 - (void)getProductsForCategorie:(int)categorieId;
-- (void)addNewOrderForUser:(int)userId;
+- (void)addNewOrder;
 
 @end
