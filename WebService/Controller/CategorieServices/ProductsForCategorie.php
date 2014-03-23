@@ -2,7 +2,7 @@
 	ini_set("display_errors", 1);
 
 	if (isset($_GET['appKey']) and isset($_GET['categorie_id'])) {
-		include ('Categorie.php');
+		include ('../../Model/Categorie.php');
 
 		$categorie = new Categorie();
 		$categorie->id = $_GET['categorie_id'];

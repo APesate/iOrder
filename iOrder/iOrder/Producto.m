@@ -2,7 +2,7 @@
 //  Producto.m
 //  iOrder
 //
-//  Created by Andrés Pesate on 3/18/14.
+//  Created by Andrés Pesate on 3/22/14.
 //  Copyright (c) 2014 Andrés Pesate. All rights reserved.
 //
 
@@ -19,6 +19,7 @@
 @dynamic image;
 @dynamic nombre;
 @dynamic precio;
+@dynamic ident;
 @dynamic belongsCategoria;
 @dynamic factura;
 

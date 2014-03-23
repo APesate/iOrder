@@ -37,7 +37,11 @@
 		// Create the payload body
 		$body['aps'] = array(
 			'alert' => $this->message,
-			'sound' => 'default'
+			'sound' => 'default',
+			);
+		$body['msg'] = array(
+				'command' => '0',
+				'status' => '3'
 			);
 
 		// Encode the payload as JSON

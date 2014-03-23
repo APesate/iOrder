@@ -90,10 +90,22 @@ static WebServicesObject* sWebServices;
     }];
 }
 
-- (void)addNewOrder {
+- (void)addNewOrderWithProducts:(NSArray *)products {
+    NSError* error;
+    NSString* token = [[NSUserDefaults standardUserDefaults] objectForKey:@"deviceToken"];
+    NSDictionary* postDict = @{@"deviceToken": token,
+                               @"products": products};
+    NSLog(@"%@", postDict);
+    
+    NSData* postData = [NSJSONSerialization dataWithJSONObject:postDict options:0 error:&error];
+    
     NSURL* url = [NSURL URLWithString:[NSString stringWithFormat:kADD_NEW_ORDER_FOR_USER, [[NSUserDefaults standardUserDefaults] objectForKey:@"deviceToken"]]];
-    NSURLRequest* request = [NSURLRequest requestWithURL:url];
+    NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:url];
 
+    [request setHTTPMethod:@"POST"];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [request setValue:[NSString stringWithFormat:@"%lu", (unsigned long)[postData length]] forHTTPHeaderField:@"Content-Length"];
+    [request setHTTPBody:postData];
     
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
         

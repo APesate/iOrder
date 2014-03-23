@@ -3,7 +3,7 @@
 
 	if (isset($_GET['appKey'])) {
 
-		include ('Categorie.php');
+		include ('../../Model/Categorie.php');
 		$categorie = new Categorie();
 
 		echo json_encode($categorie->getAllCategories());

@@ -2,7 +2,7 @@
 	ini_set("display_errors", 1);
 
 	if (isset($_GET['appKey']) and isset($_GET['product_id'])) {
-		include ('Product.php');
+		include ('../../Model/Product.php');
 
 		$product = new Product();
 		$product->id = $_GET['product_id'];

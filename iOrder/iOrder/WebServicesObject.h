@@ -16,6 +16,6 @@
 
 - (void)getAllCategories;
 - (void)getProductsForCategorie:(int)categorieId;
-- (void)addNewOrder;
+- (void)addNewOrderWithProducts:(NSArray *)products;
 
 @end

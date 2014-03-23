@@ -195,4 +195,15 @@ static APTModelFactory* sModelFactory;
     }
 }
 
+- (NSDictionary *)objectToDictionary:(id)object {
+    if ([object isKindOfClass: [Producto class]]) {
+        NSDictionary* objectDict = @{@"name": [(Producto *)object nombre],
+                                     @"id": [(Producto *)object ident]};
+        
+        return objectDict;
+    }
+    
+    return nil;
+}
+
 @end

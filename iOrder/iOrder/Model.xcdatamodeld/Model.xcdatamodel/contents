@@ -20,6 +20,7 @@
         <attribute name="descripcion" attributeType="String" syncable="YES"/>
         <attribute name="fecha_actualizacion" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="fecha_creacion" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="ident" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="image" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="nombre" attributeType="String" syncable="YES"/>
         <attribute name="precio" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
@@ -30,6 +31,6 @@
         <element name="Categoria" positionX="0" positionY="0" width="128" height="88"/>
         <element name="Factura" positionX="0" positionY="0" width="128" height="103"/>
         <element name="FacturaHasProducto" positionX="0" positionY="0" width="128" height="90"/>
-        <element name="Producto" positionX="0" positionY="0" width="128" height="165"/>
+        <element name="Producto" positionX="0" positionY="0" width="128" height="180"/>
     </elements>
 </model>

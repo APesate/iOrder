@@ -52,7 +52,6 @@
     
     ordenActual = [NSMutableArray arrayWithArray:[[factura factura] allObjects]];
     
-
     switch (factura.estado.integerValue) {
         case SinOrdenar:
             statusLabel.text = @"Sin Ordenar";
@@ -93,11 +92,17 @@
     NSSortDescriptor* sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"fecha_creacion" ascending:NO];
     
     Factura* factura = (Factura*)[modelFactory fetchRecentObjectInEntity:@"Factura" withSort:sortDescriptor];
+
+    NSMutableArray* productos = [NSMutableArray array];
+    
+    [ordenActual enumerateObjectsUsingBlock:^(FacturaHasProducto* obj, NSUInteger idx, BOOL *stop) {
+        [productos addObject:[modelFactory objectToDictionary:obj]];
+    }];
     
     if (factura.estado.integerValue != Lista) {
         factura.estado = @(Recibida);
         statusLabel.text = @"Recibida";
-        [webServicesObject addNewOrder];
+        [webServicesObject addNewOrderWithProducts:productos];
         
         NSError* error;
         if (![[modelFactory managedObjectContext] save:&error]) {

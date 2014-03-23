@@ -23,5 +23,6 @@
 - (instancetype)fetchRecentObjectInEntity:(NSString*)entityName withSort:(NSSortDescriptor*)sortDescriptor;
 - (void)addCategories:(NSArray *)categories;
 - (void)addProducts:(NSArray *)products ForCategorie:(int)categorieId;
+- (NSDictionary *)objectToDictionary:(id)object;
 
 @end

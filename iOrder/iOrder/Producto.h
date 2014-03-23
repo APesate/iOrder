@@ -2,7 +2,7 @@
 //  Producto.h
 //  iOrder
 //
-//  Created by Andrés Pesate on 3/18/14.
+//  Created by Andrés Pesate on 3/22/14.
 //  Copyright (c) 2014 Andrés Pesate. All rights reserved.
 //
 
@@ -19,6 +19,7 @@
 @property (nonatomic, retain) NSData * image;
 @property (nonatomic, retain) NSString * nombre;
 @property (nonatomic, retain) NSNumber * precio;
+@property (nonatomic, retain) NSNumber * ident;
 @property (nonatomic, retain) Categoria *belongsCategoria;
 @property (nonatomic, retain) NSSet *factura;
 @end

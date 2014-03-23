@@ -33,7 +33,7 @@
 		}
 
 		function makeConection(){
-			require_once('config.php');
+			require_once('../../Config/config.php');
 
 			$conexion = mysql_connect($server, $username, $passwd) or die('1');
 			mysql_select_db($db_name) or die('1');
@@ -59,15 +59,14 @@
 		}
 
 		function getAllProductForCategorie(){
-			include('Product.php');
+			include('../../Model/Product.php');
 			$this->makeConection();
 
-			$query = mysql_query("SELECT * FROM Producto WHERE Categoria_id = '$this->id'");
+			$query = mysql_query("SELECT * FROM Producto WHERE Categoria_id = '$this->id'") or die(mysql_error());
 
 			if (mysql_num_rows($query) > 0) {
 				while ($result = mysql_fetch_array($query)) {
 					$product = new Product();
-
 
 					$this->products[] = array(
 						'id' => $result['id'],
