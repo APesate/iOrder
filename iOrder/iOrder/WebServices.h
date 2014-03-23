@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Andrés Pesate. All rights reserved.
 //
 
-#define kHOST @"http://192.168.2.124/iOrder/Controller/"
+#define kHOST @"http://192.168.1.39/iOrder/Controller/"
 #define kAPP_KEY @"i0rD3r44DPc5"
 
 #define kGET_ALL_CATEGORIES kHOST @"CategorieServices/AllCategories.php?appKey=" kAPP_KEY

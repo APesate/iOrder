@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 #import "Producto.h"
 #import "Categoria.h"
+#import "FacturaHasProducto.h"
 
 @implementation APTModelFactory{
     NSFileManager* fileManager;
@@ -177,10 +178,18 @@ static APTModelFactory* sModelFactory;
         
         Producto* product = [[Producto alloc] initWithEntity:[NSEntityDescription entityForName:@"Producto" inManagedObjectContext:_managedObjectContext] insertIntoManagedObjectContext:_managedObjectContext];
         
+        product.ident = @([[obj objectForKey:@"id"] integerValue]);
         product.nombre = [obj objectForKey:@"name"];
         product.precio = @([[obj objectForKey:@"precio"] integerValue]);
         product.descripcion = [obj objectForKey:@"description"];
-        //product.image = UIImagePNGRepresentation([UIImage imageWithData:[NSData dataWithData:[obj objectForKey:@"image"]]]);
+        
+        NSString* urlString = [NSString stringWithFormat:@"http://127.0.0.1/iOrder/%@", [obj objectForKey:@"image"]];
+        NSURL* url = [NSURL URLWithString:urlString];
+        
+        dispatch_async(dispatch_queue_create("image", nil), ^{
+            product.image = [NSData dataWithContentsOfURL:url];
+        });
+        
         product.fecha_actualizacion = [df dateFromString:[obj objectForKey:@"update_date"]];
         product.fecha_creacion = [df dateFromString:[obj objectForKey:@"creation_date"]];
         product.belongsCategoria = categorie;

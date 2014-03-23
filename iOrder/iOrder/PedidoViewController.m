@@ -96,7 +96,8 @@
     NSMutableArray* productos = [NSMutableArray array];
     
     [ordenActual enumerateObjectsUsingBlock:^(FacturaHasProducto* obj, NSUInteger idx, BOOL *stop) {
-        [productos addObject:[modelFactory objectToDictionary:obj]];
+        NSDictionary* dict = @{@"producto": [modelFactory objectToDictionary:obj.productos], @"cantidad": obj.cantidad};
+        [productos addObject: dict];
     }];
     
     if (factura.estado.integerValue != Lista) {

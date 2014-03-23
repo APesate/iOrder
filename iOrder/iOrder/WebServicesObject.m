@@ -94,8 +94,8 @@ static WebServicesObject* sWebServices;
     NSError* error;
     NSString* token = [[NSUserDefaults standardUserDefaults] objectForKey:@"deviceToken"];
     NSDictionary* postDict = @{@"deviceToken": token,
-                               @"products": products};
-    NSLog(@"%@", postDict);
+                               @"products": products,
+                               @"appKey": kAPP_KEY};
     
     NSData* postData = [NSJSONSerialization dataWithJSONObject:postDict options:0 error:&error];
     
@@ -109,6 +109,7 @@ static WebServicesObject* sWebServices;
     
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
         
+        NSLog(@"DATA: %@", [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
         if ([self isValidResponse:data]) {
             UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Orden Enviada" message:@"Su Orden ha sido enviada" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
             [alert show];
